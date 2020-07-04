@@ -21,8 +21,6 @@
 
     ~/.tmux_local.conf: .tmux_local.conf
 
-    ~/.hammerspoon/: .hammerspoon/*
-
 - shell:
   # - git submodule init
   - git submodule update
