@@ -1,0 +1,50 @@
+# vim mode for fish pretier prompt
+#
+function fish_mode_prompt --description 'Displays the current mode'
+    # Do nothing if not in vi mode
+    if test "$fish_key_bindings" = "fish_vi_key_bindings"
+        switch $fish_bind_mode
+            case default
+                set_color --bold red
+                echo 🅽
+            case insert
+                set_color --bold green
+                echo 🅸
+            case replace-one
+                set_color --bold green
+                echo 🆁
+            case visual
+                set_color --bold brmagenta
+                echo 🆅
+        end
+        set_color normal
+        printf " "
+    end
+end
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+eval /opt/anaconda3/bin/conda "shell.fish" "hook" $argv | source
+# <<< conda initialize <<<
+
+# Homebrew tsinghua source
+# 
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
+
+# proxychains on macos is proxychains4
+#
+abbr -a pc proxychains4
+
+# macos using brew install llvm to install clangd
+# 
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+
+# cargo
+# #
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# golang
+# 
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
