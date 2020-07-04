@@ -1,0 +1,31 @@
+# because of force flag = true, 
+# note that using this script will symlink all config files shown in this directory to your machine.
+
+- defaults:
+    link:
+      # when create is true, create parent directories to the link
+      create: true
+      # removes old target if it's a symlink
+      relink: true
+      # force removes the old target, file or folder
+      # if you want to change all dotfiles on this machine to dotfiles in this folder, set force=true
+      # force: true
+      # glob treats * as a wildcard, so perform link operations on all matches
+      glob: true
+      
+- clean: ['~', '~/.config']
+
+- link:
+
+    ~/.fish.config.local: .fish.config.local
+
+    ~/.tmux_local.conf: .tmux_local.conf
+
+    ~/.hammerspoon/: .hammerspoon/*
+
+- shell:
+  # - git submodule init
+  - git submodule update
+  # sometimes you will change your .gitmodules
+  # git submodule sync to copy the new configuration from .gitmodules to .git/config
+  - git submodule sync --recursive
