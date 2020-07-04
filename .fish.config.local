@@ -1,3 +1,23 @@
+export PATH="/home/vagrant/.cargo/bin:$PATH"
+
+function fish_prompt
+	set_color brblack
+	echo -n "["(date "+%H:%M")"] "
+	set_color brblue
+	echo -n (hostname)
+	if [ $PWD != $HOME ]
+		set_color brblack
+		echo -n ': '
+		set_color yellow
+		echo -n (basename $PWD)
+	end
+	set_color green
+	printf '%s ' (__fish_git_prompt)
+	set_color brblue
+	echo -n '| '
+	set_color normal
+end
+
 # vim mode for fish pretier prompt
 #
 function fish_mode_prompt --description 'Displays the current mode'
@@ -22,29 +42,3 @@ function fish_mode_prompt --description 'Displays the current mode'
     end
 end
 
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-eval /opt/anaconda3/bin/conda "shell.fish" "hook" $argv | source
-# <<< conda initialize <<<
-
-# Homebrew tsinghua source
-# 
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
-
-# proxychains on macos is proxychains4
-#
-abbr -a pc proxychains4
-
-# macos using brew install llvm to install clangd
-# 
-export PATH="/usr/local/opt/llvm/bin:$PATH"
-
-# cargo
-# #
-export PATH="$HOME/.cargo/bin:$PATH"
-
-# golang
-# 
-export GOPATH="$HOME/go"
-export PATH="$PATH:$GOPATH/bin"
