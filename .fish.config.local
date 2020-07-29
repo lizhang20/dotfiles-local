@@ -1,3 +1,5 @@
+abbr -a do "cd ~/Documents"
+
 # vim mode for fish pretier prompt
 #
 function fish_mode_prompt --description 'Displays the current mode'
