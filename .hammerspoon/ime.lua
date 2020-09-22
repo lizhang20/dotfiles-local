@@ -19,7 +19,7 @@ local app2Ime = {
     {'/Users/zli/installed/Qt5.14.2/Qt Creator.app', 'English'},
     {'/Applications/DingTalk.app', 'Chinese'},
     {'/Applications/NeteaseMusic.app', 'Chinese'},
-    {'/Applications/WeChat.app', 'Chinese'},
+    -- {'/Applications/WeChat.app', 'Chinese'},
 }
 
 function updateFocusAppInputMethod()
