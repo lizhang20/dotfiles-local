@@ -24,6 +24,14 @@ function fish_mode_prompt --description 'Displays the current mode'
     end
 end
 
+# using 'pl' performs `proxychains4 (last-command)` on macOS
+#
+function pl
+    echo "proxychains4 $history[1]"
+    echo ""
+    eval command proxychains4 $history[1]
+end
+
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
