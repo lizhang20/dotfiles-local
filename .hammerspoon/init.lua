@@ -19,3 +19,7 @@ require('ime')
 
 -- use command+up/down to set volume
 require('volume')
+
+require('settings')
+
+require('clipboard')
