@@ -6,7 +6,7 @@ function fish_prompt
 	if [ $PWD != $HOME ]
 		set_color brblack
 		echo -n ': '
-		set_color yellow
+		set_color brblue
 		echo -n (basename $PWD)
 	end
 	set_color green
