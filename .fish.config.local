@@ -43,7 +43,7 @@ end
 # http_proxy port
 set -x proxy_port 1087
 
-# use this function to set http_proxy environment variable on server
+# use this function to set http_proxy environment variables
 #
 function set_proxy
     # Use -g to make environment variable outside this function
@@ -53,11 +53,21 @@ function set_proxy
     set -gx HTTPS_PROXY "$argv:$proxy_port"
 end
 
-# remove http_proxy environment variable on server
+# remove http_proxy environment variables
 #
 function remove_proxy
     set -e http_proxy
     set -e https_proxy
     set -e HTTP_PROXY
     set -e HTTPS_PROXY
+end
+
+# list http_proxy environment variables
+#
+function ls_proxy
+    echo "List http proxys"
+    echo "http_proxy: $http_proxy"
+    echo "https_proxy: $https_proxy"
+    echo "HTTP_PROXY: $HTTP_PROXY"
+    echo "HTTPS_PROXY: $HTTPS_PROXY"
 end
