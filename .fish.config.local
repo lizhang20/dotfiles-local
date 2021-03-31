@@ -40,3 +40,24 @@ function fish_mode_prompt --description 'Displays the current mode'
     end
 end
 
+# http_proxy port
+set -x proxy_port 1087
+
+# use this function to set http_proxy environment variable on server
+#
+function set_proxy
+    # Use -g to make environment variable outside this function
+    set -gx http_proxy  "$argv:$proxy_port"
+    set -gx https_proxy "$argv:$proxy_port"
+    set -gx HTTP_PROXY  "$argv:$proxy_port"
+    set -gx HTTPS_PROXY "$argv:$proxy_port"
+end
+
+# remove http_proxy environment variable on server
+#
+function remove_proxy
+    set -e http_proxy
+    set -e https_proxy
+    set -e HTTP_PROXY
+    set -e HTTPS_PROXY
+end
