@@ -1,19 +1,19 @@
 function fish_prompt
-	set_color brblack
-	echo -n "["(date "+%H:%M")"] "
-	set_color brblack
-	echo -n (hostname)
-	if [ $PWD != $HOME ]
-		set_color brblack
-		echo -n ': '
-		set_color brblue
-		echo -n (basename $PWD)
-	end
-	set_color green
-	printf '%s ' (__fish_git_prompt)
-	set_color brblue
-	echo -n '| '
-	set_color normal
+    set_color brblack
+    echo -n "["(date "+%H:%M")"] "
+    set_color brblack
+    echo -n (hostname)
+    if [ $PWD != $HOME ]
+        set_color brblack
+        echo -n ': '
+        set_color brblue
+        echo -n (basename $PWD)
+    end
+    set_color green
+    printf '%s ' (__fish_git_prompt)
+    set_color brblue
+    echo -n '| '
+    set_color normal
 end
 
 # vim mode for fish pretier prompt
