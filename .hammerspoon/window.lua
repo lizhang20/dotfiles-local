@@ -33,7 +33,7 @@ hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'left', function()
 end)
 
 -- window hints
-hs.hotkey.bind({'shift', 'cmd'}, 'h', hs.hints.windowHints)
+-- hs.hotkey.bind({'shift', 'cmd'}, 'h', hs.hints.windowHints)
 
 -- grid gui
 hs.grid.setMargins({w = 0, h = 0})
