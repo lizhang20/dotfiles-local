@@ -47,10 +47,10 @@ set -x proxy_port 1087
 #
 function set_proxy
     # Use -g to make environment variable outside this function
-    set -gx http_proxy  "$argv:$proxy_port"
-    set -gx https_proxy "$argv:$proxy_port"
-    set -gx HTTP_PROXY  "$argv:$proxy_port"
-    set -gx HTTPS_PROXY "$argv:$proxy_port"
+    set -gx http_proxy  "http://$argv:$proxy_port"
+    set -gx https_proxy "http://$argv:$proxy_port"
+    set -gx HTTP_PROXY  "http://$argv:$proxy_port"
+    set -gx HTTPS_PROXY "http://$argv:$proxy_port"
 end
 
 # remove http_proxy environment variables
