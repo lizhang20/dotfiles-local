@@ -23,3 +23,6 @@ require('volume')
 require('settings')
 
 require('clipboard')
+
+require('config')
+require('layout')

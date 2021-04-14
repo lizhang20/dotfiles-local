@@ -48,6 +48,24 @@ menu = {
       reloadMenu()
     end
   },
+  {
+    title = "-" -- separator
+  },
+  {
+    title = "Layout: Lab",
+    fn = function()
+      applyLayout("Lab", layoutLab())
+    end
+  },
+  {
+    title = "-" -- separator
+  },
+  {
+    title = "Layout: MacbookPro",
+    fn = function()
+      applyLayout("Lab", layoutLab())
+    end
+  },
 }
 
 reloadMenu()
