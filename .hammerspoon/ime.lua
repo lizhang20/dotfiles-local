@@ -17,6 +17,8 @@ local app2Ime = {
     {'/Applications/网易有道词典.app', 'English'},
     {'/Applications/PyCharm.app', 'English'},
     {'/Users/zli/installed/Qt5.14.2/Qt Creator.app', 'English'},
+    {'/Appliactions/Android Studio.app', 'English'},
+    {'/Users/zli/Library/Application Support/JetBrains/Toolbox/apps/IDEA-U/ch-0/211.6693.111/IntelliJ IDEA.app', 'English'},
     {'/Applications/DingTalk.app', 'Chinese'},
     {'/Applications/NeteaseMusic.app', 'Chinese'},
     -- {'/Applications/WeChat.app', 'Chinese'},
