@@ -59,6 +59,22 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 
+# maven
+#
+export PATH="/Users/zli/.maven/apache-maven-3.8.1/bin:$PATH"
+
+# dx binary in Android SDK
+#
+export PATH="/Users/zli/Library/Android/sdk/build-tools/30.0.2:$PATH"
+
+# basictex
+#
+export PATH="/Library/TeX/texbin/:$PATH"
+
+# android ndk
+#
+export ANDROID_NDK="/Users/zli/Library/Android/sdk/ndk/21.4.7075529"
+
 # set terminal installed things with EN-lang
 # https://stackoverflow.com/questions/14189134/how-to-change-git-from-chinese-to-english-in-mac
 #
