@@ -1,6 +1,6 @@
 abbr -a do "cd ~/Documents"
 abbr -a disablev6 "networksetup -setv6off Wi-Fi"
-abbr -a enablev6 "networksetup -setv6off Wi-Fi"
+abbr -a enablev6 "networksetup -setv6automatic Wi-Fi"
 
 # vim mode for fish pretier prompt
 #
