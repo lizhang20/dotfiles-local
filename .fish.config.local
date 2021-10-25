@@ -1,6 +1,26 @@
 abbr -a do "cd ~/Documents"
+
+# Network configuration: only works under Wi-Fi
+#
 abbr -a disablev6 "networksetup -setv6off Wi-Fi"
 abbr -a enablev6 "networksetup -setv6automatic Wi-Fi"
+
+# Setup ip and port number for HTTP(S) and Socks5 proxy
+#
+# networksetup -setwebproxy "Wi-Fi" 127.0.0.1 8888 # HTTP proxy
+# networksetup -setsecurewebproxy "Wi-Fi" 127.0.0.1 8888 # HTTPS proxy
+# networksetup -setsocksfirewallproxy "Wi-Fi" 127.0.0.1 8888 # SOCKS5 proxy
+
+# Quickly toggle HTTP(S) and Socks5 proxy
+#
+abbr -a enableallproxy "networksetup -setwebproxystate \"Wi-Fi\" on
+networksetup -setsocksfirewallproxystate \"Wi-Fi\" on
+networksetup -setsecurewebproxystate \"Wi-Fi\" on
+"
+abbr -a disableallproxy "networksetup -setwebproxystate \"Wi-Fi\" off
+networksetup -setsocksfirewallproxystate \"Wi-Fi\" off
+networksetup -setsecurewebproxystate \"Wi-Fi\" off
+"
 
 # vim mode for fish pretier prompt
 #
