@@ -97,6 +97,10 @@ export PATH="/Library/TeX/texbin/:$PATH"
 #
 export ANDROID_NDK="/Users/zli/Library/Android/sdk/ndk/21.4.7075529"
 
+# autojump
+#
+[ -f /usr/local/share/autojump/autojump.fish ]; and source /usr/local/share/autojump/autojump.fish
+
 # set terminal installed things with EN-lang
 # https://stackoverflow.com/questions/14189134/how-to-change-git-from-chinese-to-english-in-mac
 #
