@@ -8,30 +8,30 @@ end
 
 -- app to expected ime config
 local app2Ime = {
-    {'/Applications/iTerm.app', 'English'},
-    {'/System/Library/CoreServices/Finder.app', 'English'},
-    {'/System/Library/CoreServices/Spotlight.app', 'English'},
-    {'/Applications/System Preferences.app', 'English'},
-    {'/Applications/Visual Studio Code.app', 'English'},
-    {'/Applications/Notion.app', 'English'},
-    {'/Applications/网易有道词典.app', 'English'},
-    {'/Applications/PyCharm.app', 'English'},
-    {'/Users/zli/installed/Qt5.14.2/Qt Creator.app', 'English'},
-    {'/Appliactions/Android Studio.app', 'English'},
-    {'/Users/zli/Library/Application Support/JetBrains/Toolbox/apps/IDEA-U/ch-0/211.6693.111/IntelliJ IDEA.app', 'English'},
-    {'/Applications/Microsoft Edge Beta.app', 'English'},
-    {'/Applications/DingTalk.app', 'Chinese'},
-    {'/Applications/NeteaseMusic.app', 'Chinese'},
-    -- {'/Applications/WeChat.app', 'Chinese'},
+    {'iTerm', 'English'},
+    {'Finder', 'English'},
+    {'Spotlight', 'English'},
+    {'System Preferences', 'English'},
+    {'Code', 'English'},
+    {'Notion', 'English'},
+    {'网易有道词典', 'English'},
+    {'PyCharm', 'English'},
+    {'Qt Creator', 'English'},
+    {'Android Studio', 'English'},
+    {'IntelliJ IDEA', 'English'},
+    {'Microsoft Edge Beta', 'English'},
+    {'DingTalk', 'Chinese'},
+    {'NeteaseMusic', 'Chinese'},
+    -- {'WeChat', 'Chinese'},
 }
 
 function updateFocusAppInputMethod()
-    local focusAppPath = hs.window.frontmostWindow():application():path()
+    local focusAppName = hs.window.frontmostWindow():application():name()
     for index, app in pairs(app2Ime) do
-        local appPath = app[1]
+        local appName = app[1]
         local expectedIme = app[2]
 
-        if focusAppPath == appPath then
+        if focusAppName == appName then
             if expectedIme == 'English' then
                 English()
             else
