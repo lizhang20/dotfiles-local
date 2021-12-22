@@ -8,7 +8,7 @@ end
 
 -- app to expected ime config
 local app2Ime = {
-    {'iTerm', 'English'},
+    {'iTerm2', 'English'},
     {'Finder', 'English'},
     {'Spotlight', 'English'},
     {'System Preferences', 'English'},
