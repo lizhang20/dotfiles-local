@@ -95,7 +95,7 @@ export PATH="/Library/TeX/texbin/:$PATH"
 
 # android ndk
 #
-export ANDROID_NDK="/Users/zli/Library/Android/sdk/ndk/21.4.7075529"
+export ANDROID_NDK="/Users/zli/Library/Android/sdk/ndk/23.1.7779620"
 
 # autojump
 #
