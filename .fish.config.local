@@ -22,6 +22,8 @@ networksetup -setsocksfirewallproxystate \"Wi-Fi\" off
 networksetup -setsecurewebproxystate \"Wi-Fi\" off
 "
 
+abbr -a getallproxy "networksetup -getwebproxy Wi-Fi"
+
 # vim mode for fish pretier prompt
 #
 function fish_mode_prompt --description 'Displays the current mode'
@@ -96,8 +98,10 @@ export PATH="/Library/TeX/texbin/:$PATH"
 
 # android
 #
-export ANDROID_NDK="/Users/zli/Library/Android/sdk/ndk/22.1.7171670"
-export ANDROID_SDK="/Users/zli/Library/Android/sdk"
+export ANDROID_NDK="/Users/zli/Library/Android/sdk/ndk/23.1.7779620"
+export ANDROID_SDK="/Users/zli/Library/Android/sdk/"
+
+# set -x JAVA_HOME (/usr/libexec/java_home -v 1.8)
 
 # autojump
 #
