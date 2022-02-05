@@ -18,4 +18,4 @@ local currentFilename = getCurFilename()
 local absPath = hs.fs.pathToAbsolute(hs.fs.currentDir() .. currentFilename) 
 local configPath = absPath:sub(1, -#currentFilename)
 
-configWatcher = hs.pathwatcher.new(configPath, reloadConfig):start()
+configWatcher = hs.pathwatcher.new(configPath, hs.reload):start()

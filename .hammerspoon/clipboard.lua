@@ -79,9 +79,9 @@ end
 -- Append a history counter to the menu
 function setTitle()
    if (#clipboard_history == 0) then
-      -- jumpcut:setTitle("✂") -- Unicode magic
+      jumpcut:setTitle("✂") -- Unicode magic
    else
-      -- jumpcut:setTitle("✂") -- Unicode magic
+      jumpcut:setTitle("✂") -- Unicode magic
       -- jumpcut:setTitle("✂ ("..#clipboard_history..")") -- updates the menu counter
    end
 end
@@ -173,5 +173,6 @@ timer:start()
 
 setTitle() --Avoid wrong title if the user already has something on his saved history
 jumpcut:setMenu(populateMenu)
+jumpcut:removeFromMenuBar()
 
-hs.hotkey.bind({"cmd", "shift"}, "v", function() jumpcut:popupMenu(hs.mouse.absolutePosition()) end)
+hs.hotkey.bind({"cmd", "shift"}, "v", function() jumpcut:popupMenu(hs.mouse.absolutePosition(), true) end)
