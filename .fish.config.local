@@ -57,7 +57,7 @@ end
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-eval /opt/anaconda3/bin/conda "shell.fish" "hook" $argv | source
+eval /opt/homebrew/anaconda3/bin/conda "shell.fish" "hook" $argv | source
 # <<< conda initialize <<<
 
 # Homebrew tsinghua source
@@ -88,14 +88,16 @@ export PATH="/Users/zli/.maven/apache-maven-3.8.1/bin:$PATH"
 # dx binary in Android SDK
 #
 export PATH="/Users/zli/Library/Android/sdk/build-tools/30.0.2:$PATH"
+export PATH="/Users/zli/Library/Android/sdk/platform-tools:$PATH"
 
 # basictex
 #
 export PATH="/Library/TeX/texbin/:$PATH"
 
-# android ndk
+# android
 #
-export ANDROID_NDK="/Users/zli/Library/Android/sdk/ndk/23.1.7779620"
+export ANDROID_NDK="/Users/zli/Library/Android/sdk/ndk/22.1.7171670"
+export ANDROID_SDK="/Users/zli/Library/Android/sdk"
 
 # autojump
 #
