@@ -26,3 +26,6 @@ require('clipboard')
 
 require('config')
 require('layout')
+
+-- auto reload hammerspoon config file when file changed
+require('reloader')
