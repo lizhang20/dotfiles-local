@@ -13,3 +13,18 @@ end
 
 hs.hotkey.bind({'cmd'}, 'Down', changeVolume(-8))
 hs.hotkey.bind({'cmd'}, 'Up', changeVolume(8))
+
+-- mute built-in speaker device when start up
+function muteBuiltInSpeakerDevice()
+  local curAudioDevice = hs.audiodevice.current()
+  if curAudioDevice.uid == "BuiltInSpeakerDevice" then
+    hs.audiodevice.defaultOutputDevice():setMuted(true)
+    hs.alert.show("Muted: " .. curAudioDevice.name)
+  end
+end
+
+wakeupWatcher = hs.caffeinate.watcher.new(function(state)
+  if state == hs.caffeinate.watcher.systemDidWake then
+    muteBuiltInSpeakerDevice()
+  end
+end):start()
