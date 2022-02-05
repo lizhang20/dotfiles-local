@@ -59,7 +59,7 @@ end
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-eval /opt/homebrew/anaconda3/bin/conda "shell.fish" "hook" $argv | source
+eval /opt/anaconda3/bin/conda "shell.fish" "hook" $argv | source
 # <<< conda initialize <<<
 
 # Homebrew tsinghua source
@@ -75,7 +75,7 @@ abbr -a pc proxychains4
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 
 # cargo
-# #
+#
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # golang
