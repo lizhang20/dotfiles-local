@@ -1,4 +1,5 @@
 require('rescuewindows')
+require('globalproxy')
 
 utilMenu = hs.menubar.new()
 
@@ -27,7 +28,7 @@ local reloadMenu = function() utilMenu:setMenu(menu) end
 menu = {
   {
     -- details in rescuewindows.lua
-    title = "Rescue windows",
+    title = "Rescue Windows",
     fn = rescueWindows
   },
   {
@@ -39,12 +40,30 @@ menu = {
     fn = function(modifiers, menuItem)
       local enabled = hs.caffeinate.toggle('displayIdle')
       if enabled then
-        hs.notify.new({title='Caffeinate', informativeText='Caffeinate on'}):send()
+        hs.notify.new({title='Caffeinate', informativeText='Caffeinate On'}):send()
       else
-        hs.notify.new({title='Caffeinate', informativeText='Caffeinate off'}):send()
+        hs.notify.new({title='Caffeinate', informativeText='Caffeinate Off'}):send()
       end
     
       menuItem.checked = enabled
+      reloadMenu()
+    end
+  },
+  {
+    title = "-" -- separator
+  },
+  {
+    title = "Global Proxy",
+    checked = checkProxyStatus(),
+    fn = function(modifiers, menuItem)
+      local proxyOn = toggleGlobalProxy()
+      if proxyOn then
+        hs.notify.new({title='GlobalProxy', informativeText='GlobalProxy On'}):send()
+      else
+        hs.notify.new({title='GlobalProxy', informativeText='GlobalProxy Off'}):send()
+      end
+    
+      menuItem.checked = proxyOn
       reloadMenu()
     end
   },
@@ -56,9 +75,6 @@ menu = {
     fn = function()
       applyLayout("Lab", layoutLab())
     end
-  },
-  {
-    title = "-" -- separator
   },
   {
     title = "Layout: MacbookPro",
