@@ -39,11 +39,11 @@ menu = {
     checked = false,
     fn = function(modifiers, menuItem)
       local enabled = hs.caffeinate.toggle('displayIdle')
-      if enabled then
-        hs.notify.new({title='Caffeinate', informativeText='Caffeinate On'}):send()
-      else
-        hs.notify.new({title='Caffeinate', informativeText='Caffeinate Off'}):send()
-      end
+      -- if enabled then
+      --   hs.notify.new({title='Caffeinate', informativeText='Caffeinate On'}):send()
+      -- else
+      --   hs.notify.new({title='Caffeinate', informativeText='Caffeinate Off'}):send()
+      -- end
     
       menuItem.checked = enabled
       reloadMenu()
@@ -57,11 +57,11 @@ menu = {
     checked = checkProxyStatus(),
     fn = function(modifiers, menuItem)
       local proxyOn = toggleGlobalProxy()
-      if proxyOn then
-        hs.notify.new({title='GlobalProxy', informativeText='GlobalProxy On'}):send()
-      else
-        hs.notify.new({title='GlobalProxy', informativeText='GlobalProxy Off'}):send()
-      end
+      -- if proxyOn then
+      --   hs.notify.new({title='GlobalProxy', informativeText='GlobalProxy On'}):send()
+      -- else
+      --   hs.notify.new({title='GlobalProxy', informativeText='GlobalProxy Off'}):send()
+      -- end
     
       menuItem.checked = proxyOn
       reloadMenu()
