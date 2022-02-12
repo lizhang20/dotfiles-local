@@ -4,6 +4,8 @@ function changeVolume(diff)
     local new = math.min(100, math.max(0, math.floor(current + diff)))
     if new > 0 then
       hs.audiodevice.defaultOutputDevice():setMuted(false)
+    else
+      hs.audiodevice.defaultOutputDevice():setMuted(true)
     end
     hs.alert.closeAll(0.0)
     hs.alert.show("Volume " .. new .. "%", {}, 0.3)
@@ -11,8 +13,22 @@ function changeVolume(diff)
   end
 end
 
+function muteVolume()
+  return function()
+    local muted = hs.audiodevice.defaultOutputDevice():muted()
+    if muted then
+      hs.audiodevice.defaultOutputDevice():setMuted(false)
+    else
+      hs.audiodevice.defaultOutputDevice():setMuted(true)
+    end
+    hs.alert.closeAll(0.0)
+    hs.alert.show("Volume " .. (muted and "Muted" or "Unmuted"), {}, 0.3)
+  end
+end
+
 hs.hotkey.bind({'cmd'}, 'Down', changeVolume(-8))
 hs.hotkey.bind({'cmd'}, 'Up', changeVolume(8))
+hs.hotkey.bind({'cmd'}, 'Left', muteVolume())
 
 -- mute built-in speaker device when start up
 function muteBuiltInSpeakerDevice()
