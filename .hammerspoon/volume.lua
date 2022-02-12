@@ -22,7 +22,7 @@ function muteVolume()
       hs.audiodevice.defaultOutputDevice():setMuted(true)
     end
     hs.alert.closeAll(0.0)
-    hs.alert.show("Volume " .. (muted and "Muted" or "Unmuted"), {}, 0.3)
+    hs.alert.show("Volume " .. (muted and "Unmuted" or "Muted"), {}, 0.5)
   end
 end
 
