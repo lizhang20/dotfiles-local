@@ -71,6 +71,15 @@ menu = {
     title = "-" -- separator
   },
   {
+    title = "Samba Status",
+    fn = function()
+      hs.notify.new({title='Samba', informativeText='Todo: using macos sharing command'}):send()
+    end
+  },
+  {
+    title = "-" -- separator
+  },
+  {
     title = "Layout: Lab",
     fn = function()
       applyLayout("Lab", layoutLab())
