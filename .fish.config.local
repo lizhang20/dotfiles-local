@@ -69,10 +69,6 @@ end
 eval /opt/anaconda3/bin/conda "shell.fish" "hook" $argv | source
 # <<< conda initialize <<<
 
-# Homebrew tsinghua source
-# 
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
-
 # proxychains on macos is proxychains4
 #
 abbr -a pc proxychains4
