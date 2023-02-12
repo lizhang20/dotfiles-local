@@ -19,6 +19,8 @@ require('ime')
 
 -- use command+up/down to set volume
 require('volume')
+-- fix Airpods automatically unbalance issue
+require('balanceaudio')
 
 require('settings')
 
