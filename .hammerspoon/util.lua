@@ -120,7 +120,7 @@ e.2......6.3..........t..q....
 ]]
 
 
-utilMenu:setIcon('ASCII:' .. iconAscii)
+utilMenu:setIcon('ASCII:' .. icon)
 
 local menu = nil
 
