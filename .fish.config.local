@@ -130,3 +130,6 @@ export PATH="/usr/local/opt/qt@5/bin:$PATH"
 # avoid homebrew autoupdate
 #
 export HOMEBREW_NO_AUTO_UPDATE=1
+
+# iTerm2 shell integeration
+test -e /Users/zli/.iterm2_shell_integration.fish ; and source /Users/zli/.iterm2_shell_integration.fish ; or true
