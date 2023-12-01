@@ -8,7 +8,7 @@ function changeVolume(diff)
       hs.audiodevice.defaultOutputDevice():setMuted(true)
     end
     hs.alert.closeAll(0.0)
-    hs.alert.show("Volume " .. new .. "%", {}, 0.3)
+    hs.alert.show(string.format("Volume %d%%", new), {}, 0.3)
     hs.audiodevice.defaultOutputDevice():setVolume(new)
   end
 end
