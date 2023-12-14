@@ -71,3 +71,9 @@ function ls_proxy
     echo "HTTP_PROXY: $HTTP_PROXY"
     echo "HTTPS_PROXY: $HTTPS_PROXY"
 end
+
+# list all users and their uids
+#
+function list_uids
+    cut -d: -f1,3 /etc/passwd
+end
