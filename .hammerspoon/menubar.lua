@@ -2,13 +2,13 @@ require('rescuewindows')
 require('globalproxy')
 require('icons')
 
-utilMenubar = hs.menubar.new()
+utilMenu = hs.menubar.new()
 -- utilMenu:setIcon('ASCII:' .. icon)
-utilMenubar:setIcon(hammerIcon)
+utilMenu:setIcon(hammerIcon)
 
 local menu = nil
 local reloadMenu = function() 
-  utilMenubar:setMenu(menu) 
+  utilMenu:setMenu(menu) 
 end
 
 menu = {
