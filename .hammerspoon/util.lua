@@ -128,7 +128,6 @@ local reloadMenu = function() utilMenu:setMenu(menu) end
 
 menu = {
   {
-    -- details in rescuewindows.lua
     title = "Rescue Windows",
     fn = rescueWindows
   },
@@ -140,12 +139,6 @@ menu = {
     checked = false,
     fn = function(modifiers, menuItem)
       local enabled = hs.caffeinate.toggle('displayIdle')
-      -- if enabled then
-      --   hs.notify.new({title='Caffeinate', informativeText='Caffeinate On'}):send()
-      -- else
-      --   hs.notify.new({title='Caffeinate', informativeText='Caffeinate Off'}):send()
-      -- end
-    
       menuItem.checked = enabled
       reloadMenu()
     end
@@ -158,12 +151,6 @@ menu = {
     checked = checkProxyStatus(),
     fn = function(modifiers, menuItem)
       local proxyOn = toggleGlobalProxy()
-      -- if proxyOn then
-      --   hs.notify.new({title='GlobalProxy', informativeText='GlobalProxy On'}):send()
-      -- else
-      --   hs.notify.new({title='GlobalProxy', informativeText='GlobalProxy Off'}):send()
-      -- end
-    
       menuItem.checked = proxyOn
       reloadMenu()
     end
@@ -181,26 +168,34 @@ menu = {
     title = "-" -- separator
   },
   {
-    title = "Samba Status",
+    title = "Reset Ethernet IPv6",
     fn = function()
-      hs.notify.new({title='Samba', informativeText='Todo: using macos sharing command'}):send()
+      hs.notify.new({title='Reset Ethernet', informativeText='Reset Ethernet'}):send()
+      hs.execute("networksetup -setv6off AX88179A")
+      hs.execute("networksetup -setv6automatic AX88179A")
     end
-  },
-  {
-    title = "-" -- separator
-  },
-  {
-    title = "Layout: Lab",
-    fn = function()
-      applyLayout("Lab", layoutLab())
-    end
-  },
-  {
-    title = "Layout: MacbookPro",
-    fn = function()
-      applyLayout("Lab", layoutLab())
-    end
-  },
+  }
+  -- {
+  --   title = "Samba Status",
+  --   fn = function()
+  --     hs.notify.new({title='Samba', informativeText='Todo: using macos sharing command'}):send()
+  --   end
+  -- },
+  -- {
+  --   title = "-" -- separator
+  -- },
+  -- {
+  --   title = "Layout: Lab",
+  --   fn = function()
+  --     applyLayout("Lab", layoutLab())
+  --   end
+  -- },
+  -- {
+  --   title = "Layout: MacbookPro",
+  --   fn = function()
+  --     applyLayout("Lab", layoutLab())
+  --   end
+  -- },
 }
 
 reloadMenu()
