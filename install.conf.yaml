@@ -13,7 +13,7 @@
       # glob treats * as a wildcard, so perform link operations on all matches
       glob: true
       
-- clean: ['~', '~/.config']
+- clean: ['~/.hammerspoon/']
 
 - link:
 
@@ -22,10 +22,3 @@
     ~/.tmux_local.conf: .tmux_local.conf
 
     ~/.hammerspoon/: .hammerspoon/*
-
-- shell:
-  # - git submodule init
-  - git submodule update
-  # sometimes you will change your .gitmodules
-  # git submodule sync to copy the new configuration from .gitmodules to .git/config
-  - git submodule sync --recursive

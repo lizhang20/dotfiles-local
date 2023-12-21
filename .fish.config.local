@@ -1,6 +1,7 @@
 abbr -a f "ffmpeg -hide_banner"
 abbr -a ffmpeg "ffmpeg -hide_banner"
 abbr -a plotbitrate "/opt/anaconda3/envs/python3.10/bin/python3 /Users/zli/test/plotbitratefaster.py"
+abbr -a ff "/Applications/Firefox.app/Contents/MacOS/firefox"
 
 # Change input source of the main display to HDMI-1
 #
