@@ -55,9 +55,9 @@ menu = {
   {
     title = "Reset Ethernet IPv6",
     fn = function()
-      hs.notify.new({title='Reset Ethernet', informativeText='Reset Ethernet'}):send()
-      hs.execute("networksetup -setv6off AX88179A")
-      hs.execute("networksetup -setv6automatic AX88179A")
+      hs.alert.show('Reset Ethernet Successfully')
+      hs.execite("networksetup -setnetworkserviceenabled AX88179A off")
+      hs.execite("networksetup -setnetworkserviceenabled AX88179A on")
     end
   }
   -- {
