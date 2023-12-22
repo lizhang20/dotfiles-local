@@ -38,9 +38,3 @@ function muteBuiltInSpeakerDevice()
     hs.alert.show("Muted: " .. curAudioDevice.name)
   end
 end
-
-wakeupWatcher = hs.caffeinate.watcher.new(function(state)
-  if state == hs.caffeinate.watcher.systemDidWake then
-    muteBuiltInSpeakerDevice()
-  end
-end):start()

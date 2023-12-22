@@ -1,5 +1,5 @@
-checkProxyStatus = function()
-    local output = hs.execute("networksetup -getwebproxy Wi-Fi | grep No")
+checkProxyStatus = function(interface)
+    local output = hs.execute("networksetup -getwebproxy " .. interface .. " | grep No")
     local enabled
     if string.find(output, "No") then
         enabled = false
@@ -10,7 +10,7 @@ checkProxyStatus = function()
 end
 
 toggleGlobalProxy = function()
-    local proxyOn = checkProxyStatus()  -- check proxy status when reloading menu
+    local proxyOn = checkProxyStatus("Wi-Fi")  -- check proxy status when reloading menu
     if proxyOn then
         -- if proxy is enabled, disable it
         hs.execute("networksetup -setwebproxystate Wi-Fi off")
@@ -29,4 +29,8 @@ toggleGlobalProxy = function()
         hs.alert.show(alertInfo)
         return true
     end
+end
+
+menubarInit = function()
+    return checkProxyStatus("Wi-Fi")
 end

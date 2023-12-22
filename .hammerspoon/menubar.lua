@@ -33,7 +33,7 @@ menu = {
   },
   {
     title = "Global Proxy",
-    checked = checkProxyStatus(),
+    checked = menubarInit,
     fn = function(modifiers, menuItem)
       local proxyOn = toggleGlobalProxy()
       menuItem.checked = proxyOn
