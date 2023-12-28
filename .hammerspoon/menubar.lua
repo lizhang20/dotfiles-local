@@ -53,13 +53,19 @@ menu = {
     title = "-" -- separator
   },
   {
-    title = "Reset Ethernet IPv6",
+    title = "Ethernet: Reset IPv6",
     fn = function()
       hs.alert.show('Reset Ethernet Successfully')
-      hs.execite("networksetup -setnetworkserviceenabled AX88179A off")
-      hs.execite("networksetup -setnetworkserviceenabled AX88179A on")
+      hs.execute("networksetup -setnetworkserviceenabled AX88179A off")
+      hs.execute("networksetup -setnetworkserviceenabled AX88179A on")
     end
-  }
+  },
+  {
+    title = "Ethernet: Auth",
+    fn = function()
+      hs.execute("bash ./net-auth.sh")
+    end
+  },
   -- {
   --   title = "Samba Status",
   --   fn = function()
