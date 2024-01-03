@@ -75,7 +75,8 @@ end
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-eval /opt/anaconda3/bin/conda "shell.fish" "hook" $argv | source
+[ -f /opt/anaconda3/bin/conda ]; and eval /opt/anaconda3/bin/conda "shell.fish" "hook" $argv | source
+[ -f /opt/homebrew/anaconda3/bin/conda ]; and eval /opt/homebrew/anaconda3/bin/conda "shell.fish" "hook" $argv | source
 # <<< conda initialize <<<
 
 # proxychains on macos is proxychains4
@@ -119,6 +120,7 @@ set -x JAVA_HOME (/usr/libexec/java_home -v 1.8)
 # autojump
 #
 [ -f /usr/local/share/autojump/autojump.fish ]; and source /usr/local/share/autojump/autojump.fish
+[ -f /opt/homebrew/share/autojump/autojump.fish ]; and source /opt/homebrew/share/autojump/autojump.fish
 
 # set terminal installed things with EN-lang
 # https://stackoverflow.com/questions/14189134/how-to-change-git-from-chinese-to-english-in-mac
