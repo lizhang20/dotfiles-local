@@ -7,38 +7,12 @@ abbr -a ff "/Applications/Firefox.app/Contents/MacOS/firefox"
 #
 if command -v ddcctl > /dev/null
     abbr -a hdmi1 'ddcctl -d 1 -i 17'
-else
-    echo "Error: No ddcctl command"
 end
 
 # Enable or disable Microsoft Auto Update
 #
 abbr -a disablemsupdate "sudo bash /Library/Application Support/Microsoft/MAU2.0/rm_permission.sh"
 abbr -a enablemsupdate "sudo bash /Library/Application Support/Microsoft/MAU2.0/revert.sh"
-
-# Network configuration: only works under Wi-Fi
-#
-abbr -a disablev6 "networksetup -setv6off Wi-Fi"
-abbr -a enablev6 "networksetup -setv6automatic Wi-Fi"
-
-# Setup ip and port number for HTTP(S) and Socks5 proxy
-#
-# networksetup -setwebproxy "Wi-Fi" 127.0.0.1 8888 # HTTP proxy
-# networksetup -setsecurewebproxy "Wi-Fi" 127.0.0.1 8888 # HTTPS proxy
-# networksetup -setsocksfirewallproxy "Wi-Fi" 127.0.0.1 8888 # SOCKS5 proxy
-
-# Quickly toggle HTTP(S) and Socks5 proxy
-#
-abbr -a enableallproxy "networksetup -setwebproxystate \"Wi-Fi\" on
-networksetup -setsocksfirewallproxystate \"Wi-Fi\" on
-networksetup -setsecurewebproxystate \"Wi-Fi\" on
-"
-abbr -a disableallproxy "networksetup -setwebproxystate \"Wi-Fi\" off
-networksetup -setsocksfirewallproxystate \"Wi-Fi\" off
-networksetup -setsecurewebproxystate \"Wi-Fi\" off
-"
-
-abbr -a getallproxy "networksetup -getwebproxy Wi-Fi"
 
 # vim mode for fish pretier prompt
 #
@@ -64,24 +38,12 @@ function fish_mode_prompt --description 'Displays the current mode'
     end
 end
 
-# using 'pl' performs `proxychains4 (last-command)` on macOS
-#
-function pl
-    echo "proxychains4 $history[1]"
-    echo ""
-    eval command proxychains4 $history[1]
-end
-
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 [ -f /opt/anaconda3/bin/conda ]; and eval /opt/anaconda3/bin/conda "shell.fish" "hook" $argv | source
 [ -f /opt/homebrew/anaconda3/bin/conda ]; and eval /opt/homebrew/anaconda3/bin/conda "shell.fish" "hook" $argv | source
 # <<< conda initialize <<<
-
-# proxychains on macos is proxychains4
-#
-abbr -a pc proxychains4
 
 # macos using brew install llvm to install clangd
 # 
@@ -115,7 +77,7 @@ export ANDROID_NDK="/Users/zli/Library/Android/sdk/ndk/23.1.7779620"
 export ANDROID_SDK="/Users/zli/Library/Android/sdk/"
 export ANDROID_SDK_ROOT="/Users/zli/Library/Android/sdk/"
 
-set -x JAVA_HOME (/usr/libexec/java_home -v 1.8)
+# set -x JAVA_HOME (/usr/libexec/java_home -v 1.8)
 
 # autojump
 #
@@ -133,6 +95,10 @@ export PATH="/usr/local/opt/qt@5/bin:$PATH"
 # avoid homebrew autoupdate
 #
 export HOMEBREW_NO_AUTO_UPDATE=1
+
+# homebrew bin
+#
+export PATH="/opt/homebrew/bin:$PATH"
 
 # iTerm2 shell integeration
 test -e /Users/zli/.iterm2_shell_integration.fish ; and source /Users/zli/.iterm2_shell_integration.fish ; or true
