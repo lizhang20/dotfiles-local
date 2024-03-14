@@ -1,6 +1,6 @@
 abbr -a f "ffmpeg -hide_banner"
 abbr -a ffmpeg "ffmpeg -hide_banner"
-abbr -a plotbitrate "/opt/anaconda3/envs/python3.10/bin/python3 /Users/zli/test/plotbitratefaster.py"
+abbr -a plotbitrate "/opt/anaconda3/envs/python3.10/bin/python3 $HOME/test/plotbitratefaster.py"
 abbr -a ff "/Applications/Firefox.app/Contents/MacOS/firefox"
 
 # Change input source of the main display to HDMI-1
@@ -74,12 +74,12 @@ export PATH="$PATH:$GOPATH/bin"
 
 # maven
 #
-export PATH="/Users/zli/.maven/apache-maven-3.8.1/bin:$PATH"
+export PATH="$HOME/.maven/apache-maven-3.8.1/bin:$PATH"
 
 # dx binary in Android SDK
 #
-export PATH="/Users/zli/Library/Android/sdk/build-tools/30.0.2:$PATH"
-export PATH="/Users/zli/Library/Android/sdk/platform-tools:$PATH"
+export PATH="$HOME/Library/Android/sdk/build-tools/30.0.2:$PATH"
+export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 
 # basictex
 #
@@ -87,9 +87,9 @@ export PATH="/Library/TeX/texbin/:$PATH"
 
 # android
 #
-export ANDROID_NDK="/Users/zli/Library/Android/sdk/ndk/23.1.7779620"
-export ANDROID_SDK="/Users/zli/Library/Android/sdk/"
-export ANDROID_SDK_ROOT="/Users/zli/Library/Android/sdk/"
+export ANDROID_NDK="$HOME/Library/Android/sdk/ndk/23.1.7779620"
+export ANDROID_SDK="$HOME/Library/Android/sdk/"
+export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk/"
 
 # set -x JAVA_HOME (/usr/libexec/java_home -v 1.8)
 
@@ -115,4 +115,4 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export PATH="/opt/homebrew/bin:$PATH"
 
 # iTerm2 shell integeration
-test -e /Users/zli/.iterm2_shell_integration.fish ; and source /Users/zli/.iterm2_shell_integration.fish ; or true
+test -e $HOME/.iterm2_shell_integration.fish ; and source $HOME/.iterm2_shell_integration.fish ; or true
