@@ -116,3 +116,10 @@ export PATH="/opt/homebrew/bin:$PATH"
 
 # iTerm2 shell integeration
 test -e $HOME/.iterm2_shell_integration.fish ; and source $HOME/.iterm2_shell_integration.fish ; or true
+
+
+# Created by `pipx` on 2024-03-22 07:42:29
+set PATH $PATH $HOME/.local/bin
+
+# tailscale cli
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
